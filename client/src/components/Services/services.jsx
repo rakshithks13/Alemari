@@ -1,6 +1,6 @@
 import { services, iconMap } from "../Data/servicesData";
 
-const ServicesSection = () => {
+const Services = () => {
   return (
     <section className="bg-white flex flex-col items-center px-4">
       <span className="text-xs tracking-wider text-gray-400 font-semibold uppercase mb-2">
@@ -36,4 +36,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default Services;
