@@ -8,7 +8,7 @@ import NoPage from "./pages/NoPage";
 import PlacesRoute from "./pages/PlacesRoute";
 import About from "./pages/About";
 import BlogsDetails from "./pages/BlogsDetails";
-import FloatingWhatsApp from "./components/Floating icons/whatsapp";
+import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
