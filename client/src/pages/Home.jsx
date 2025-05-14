@@ -6,12 +6,12 @@ import Testimonial from "../components/Testimonial/Testimonial";
 import Banner from "../components/Banner/Banner";
 import OrderPopup from "../components/OrderPopup/OrderPopup";
 import Destinations from "../components/Destininations/Destininations";
-import Subscribe from "../components/subscribe/Subscribe";
 import Testimonial2 from "../components/Testimonial/Testimonial2";
 import BookingSteps from "../components/BookingSteps/BookingSteps";
 import TrendingDestinations from "../components/TrendingDestinnations/TrendingDestinations";
 import Categories from "../components/Categories/Categories";
 import Services from "../components/Services/services";
+import Subscribe from "../components/Subscribe/Subscribe";
 
 const Home = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
