@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/alemari.svg";
+import Logo from "../../assets/Alemari.svg";
 import { NavLink, Link } from "react-router-dom";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";

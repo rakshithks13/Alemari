@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLogo from "../../assets/alemari.svg";
+import FooterLogo from "../../assets/Alemari.svg";
 import {
   FaFacebook,
   FaInstagram,
