@@ -1,8 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero/Hero";
 import BlogsComp from "../components/Blogs/BlogsComp";
-import Places from "../components/Places/Places";
-import Testimonial from "../components/Testimonial/Testimonial";
 import Banner from "../components/Banner/Banner";
 import OrderPopup from "../components/OrderPopup/OrderPopup";
 import Destinations from "../components/Destininations/Destininations";
@@ -23,7 +21,7 @@ const Home = () => {
     <>
       <div>
         <div className="overflow-hidden">
-          <section className="relative min-h-screen">
+          <section className="">
             <Hero />
           </section>
           <Categories />
@@ -31,17 +29,14 @@ const Home = () => {
 
           <Services />
           <Destinations />
-          <Subscribe />
-          <Testimonial2 />
           <BookingSteps />
-          <Places handleOrderPopup={() => setOrderPopup(true)} />
 
-          {/* Keep other components as needed */}
-          <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
         </div>
         <BlogsComp />
         <Banner />
-        <Testimonial />
+          <Testimonial2 />
+        <Subscribe />
+
         <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
       </div>
     </>
