@@ -7,10 +7,10 @@ import Blogs from "./pages/Blogs";
 import NoPage from "./pages/NoPage";
 import PlacesRoute from "./pages/PlacesRoute";
 import About from "./pages/About";
-import BlogsDetails from "./pages/BlogsDetails";
 import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import TirupatiBlog from "./components/BlogPages/Tirupathi";
 
 const App = () => {
   React.useEffect(() => {
@@ -29,10 +29,10 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="blogs" element={<Blogs />} />
-            <Route path="blogs/:id" element={<BlogsDetails />} />
             <Route path="best-places" element={<PlacesRoute />} />
             <Route path="about" element={<About />} />
             <Route path="*" element={<NoPage />} />
+            <Route path="blogs/Tirupathi" element={<TirupatiBlog/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

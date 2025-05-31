@@ -14,9 +14,9 @@ import Subscribe from "../components/Subscribe/Subscribe";
 const Home = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
 
-  const handleOrderPopup = () => {
-    setOrderPopup(!orderPopup);
-  };
+  // const handleOrderPopup = () => {
+  //   setOrderPopup(!orderPopup);
+  // };
   return (
     <>
       <div>
