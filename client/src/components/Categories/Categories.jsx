@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import desert from "../../assets/Categories/desert.jpg";
 import Balaji from "../../assets/Categories/balaji.jpg";
-import Islands from "../../assets/Islands.jpg";
-import Taj from "../../assets/Taj.jpg";
+import Islands from "../../assets/islands.jpg";
+import Taj from "../../assets/taj.jpg";
 
 
 const categories = [
