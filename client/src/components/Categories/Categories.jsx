@@ -1,39 +1,49 @@
 import React, { useState } from "react";
 import desert from "../../assets/Categories/desert.jpg";
 import Balaji from "../../assets/Categories/balaji.jpg";
-import Pyramid from "../../assets/Categories/pyramid.jpg";
+import Islands from "../../assets/Islands.jpg";
+import Taj from "../../assets/Taj.jpg";
+
+
 const categories = [
+    {
+    title: "Temple",
+    img: Balaji,
+    alt: "Travihara",
+    // badge: "Coming Soon",
+  },
+  {
+    title: "North India",
+    img: Taj,
+    alt: "Travihara",
+    badge: "Coming Soon",
+  },
+  {
+    title: "Island",
+    img: Islands,
+    alt: "Travihara",
+    badge: "Coming Soon",
+  },
   {
     title: "Beach",
     img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
+    alt: "Travihara",
     badge: "Coming Soon",
   },
   {
     title: "Desert",
     img: desert,
+    alt: "Travihara",
     badge: "Coming Soon",
   },
 
   {
     title: "Mountain",
     img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80",
+    alt: "Travihara",
     badge: "Coming Soon",
-  },
-  {
-    title: "Temple",
-    img: Balaji,
-    badge: "Coming Soon",
-  },
-  {
-    title: "Tower",
-    img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80",
-    badge: "Coming Soon",
-  },
-  {
-    title: "Pyramid",
-    img: Pyramid,
-    badge: "Coming Soon",
-  },
+  }
+
 ];
 
 const CATEGORIES_SHOWN = 6;

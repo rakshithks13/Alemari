@@ -3,12 +3,12 @@ import BlogCard from "./BlogCard";
 import Img1 from "../../assets/Blogs/1.png";
 import Img2 from "../../assets/places/water.jpg";
 import Img3 from "../../assets/places/boat.jpg";
-import Tirupathi from "../BlogPages/Tirupathi";
 
 const BlogsData = [
   {
     id: 1,
     image: Img1,
+    alt: "Travihara",
     title: "Tirupathi Package",
     author: "Rakshith",
     date: "April 22, 2025",
@@ -17,6 +17,7 @@ const BlogsData = [
   {
     id: 2,
     image: Img2,
+    alt: "Travihara",
     title: "Top places to visit in US",
     author: "Someone",
     date: "April 22, 2022",
@@ -25,10 +26,20 @@ const BlogsData = [
   {
     id: 3,
     image: Img3,
+    alt: "Travihara",
     title: "Top places to visit in Japan",
     author: "Someone",
     date: "April 22, 2022",
     to:"Tirupathi",
+  },
+  {
+    id: 4,
+    image: Img3,
+    alt: "Travihara",
+    title: "One day package in Bengaluru",
+    author: "Rakshith",
+    date: "April 22, 2022",
+    to:"Bengaluru",
   },
 ];
 

@@ -34,7 +34,7 @@ const LandingHero = () => {
             <div>
               <img
                 src={img}
-                alt="Traveler"
+                alt="Travihara"
                 className="w-full h-full object-cover scale-120"
               />
             </div>

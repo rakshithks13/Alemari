@@ -1,4 +1,4 @@
-import React from "react";
+
 import destinations from "../Data/destininationsData";
 
 const Destinations = () => {
@@ -38,9 +38,9 @@ const Destinations = () => {
             {destinations.map((dest) => (
               <div
                 key={dest.location}
-                className="bg-white rounded-[26px] shadow-lg overflow-hidden flex flex-col w-[285px] min-w-[250px] border border-[#f5f5f5]"
+                className="bg-white rounded-[26px] shadow-sm overflow-hidden flex flex-col w-[285px] min-w-[250px] border border-[#f5f5f5]"
                 style={{
-                  boxShadow: "0px 20px 50px rgba(34, 35, 40, 0.08)",
+                  // boxShadow: "0px 20px 50px rgba(34, 35, 40, 0.08)",
                 }}
               >
                 <div className="h-[300px] w-auto">

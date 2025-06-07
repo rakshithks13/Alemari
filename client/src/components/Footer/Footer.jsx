@@ -1,5 +1,5 @@
-import React from "react";
-import FooterLogo from "../../assets/Alemari.svg";
+
+import FooterLogo from "../../assets/Travihara.svg";
 import {
   FaFacebook,
   FaInstagram,
@@ -49,9 +49,7 @@ const Footer = () => {
                 {/* TravelloGo */}
               </h1>
               <p className="text-sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-                facere ab hic accusamus omnis dolor voluptatibus illo, tempore
-                eum tenetur.
+                Explore curated travel experiences, spiritual getaways, and culturally rich destinations. From temple tours to scenic escapes – we make every trip memorable.
               </p>
               <br />
               <div className="flex items-center gap-3 ">
@@ -65,7 +63,7 @@ const Footer = () => {
               {/* social handles */}
               <div>
                 <div className="flex items-center gap-3 mt-6">
-                  <a href="#">
+                  <a href="https://www.instagram.com/travihara_tours/">
                     <FaInstagram className="text-3xl" />
                   </a>
                   <a href="#">
@@ -90,7 +88,6 @@ const Footer = () => {
                           to={link.link}
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <span>&#11162;</span>
                           <span>{link.title}</span>
                         </Link>
                       </li>
@@ -110,7 +107,6 @@ const Footer = () => {
                           to={link.link}
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <span>&#11162;</span>
                           <span>{link.title}</span>
                         </Link>
                       </li>
@@ -130,7 +126,6 @@ const Footer = () => {
                           to={link.link}
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <span>&#11162;</span>
                           <span>{link.title}</span>
                         </Link>
                       </li>

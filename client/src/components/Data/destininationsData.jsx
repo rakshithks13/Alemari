@@ -1,23 +1,27 @@
+import Tirumala from "../../assets/Blogs/Tirupathi/Tirumala.jpg"
+import North from "../../assets/Blogs/north-india.jpg"
+import Shirdi from "../../assets/shirdi.webp"
+
 const destinations = [
   {
-    image:
-      "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=80", // Rome
-    location: "Rome, Italy",
-    price: "$5.42k",
-    duration: "10 Days Trip",
+    image:Tirumala,
+    alt: "Travihara",
+    location: "Tirupati, India",
+    price: "₹2.6k",
+    duration: "1 Days Trip",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80", // London
-    location: "London, UK",
-    price: "$4.2k",
-    duration: "12 Days Trip",
+    image: Shirdi,
+    alt: "Travihara",
+    location: "Shiridi, India",
+    price: "₹4.2k",
+    duration: "2 Days Trip",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80", // Europe
-    location: "Full Europe",
-    price: "$15k",
+    image: North,
+    alt: "Travihara",
+    location: "North India",
+    price: "₹15k",
     duration: "28 Days Trip",
   },
 ];

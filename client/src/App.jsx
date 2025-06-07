@@ -11,6 +11,12 @@ import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import TirupatiBlog from "./components/BlogPages/Tirupathi";
+import ScrollToTop from "./pages/ScrollToTop";
+
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-NB0FP6LYJV");
+ReactGA.send("pageview");
 
 const App = () => {
   React.useEffect(() => {
@@ -25,6 +31,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
