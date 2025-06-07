@@ -113,7 +113,7 @@ const TrendingDestinations = () => {
       <div className="container">
         <section className="py-10 md:py-16 bg-white select-none">
           <div className="max-w-7xl mx-auto px-4 md:px-0">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#181E4B] mb-8">Trending destinations</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#181E4B] mb-8" data-aos="fade-right" data-aos-duration="1000">Trending destinations</h2>
             <div className="flex justify-center gap-4 md:gap-8">
               {destinations.map((dest) => (
                 <div key={dest.label} className="flex flex-col items-center">

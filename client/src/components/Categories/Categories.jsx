@@ -83,10 +83,10 @@ const Categories = () => {
         {/* Heading and Controls Together */}
         <div className="container w-full mb-10 md:mb-12 flex flex-col md:flex-row items-center md:items-end justify-between text-center md:text-left gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 md:mb-3" data-aos="fade-right" data-aos-duration="1000">
               Categories
             </h2>
-            <p className="text-gray-500 text-base md:text-sm leading-relaxed max-w-xl">
+            <p className="text-gray-500 text-base md:text-sm leading-relaxed max-w-xl" data-aos="fade-left" data-aos-duration="1000">
               Here are lots of interesting destinations to visit, but don’t be
               confused—they’re already grouped by category.
             </p>
