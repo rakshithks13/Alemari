@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import Img1 from "../../assets/Blogs/1.png";
 import Img2 from "../../assets/places/water.jpg";
 import Img3 from "../../assets/places/boat.jpg";
+import Img4 from "../../assets/Blogs/Mysore/palace.jpg";
 
 const BlogsData = [
   {
@@ -34,12 +35,12 @@ const BlogsData = [
   },
   {
     id: 4,
-    image: Img3,
+    image: Img4,
     alt: "Travihara",
-    title: "One day package in Bengaluru",
+    title: "One day package in Mysore",
     author: "Rakshith",
     date: "April 22, 2022",
-    to:"Bengaluru",
+    to:"MysoreBlog",
   },
 ];
 

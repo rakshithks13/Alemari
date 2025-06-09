@@ -11,6 +11,7 @@ import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import TirupatiBlog from "./components/BlogPages/Tirupathi";
+import MysoreBlog from "./components/BlogPages/MysoreBlog";
 import ScrollToTop from "./pages/ScrollToTop";
 
 import ReactGA from "react-ga4";
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="about" element={<About />} />
             <Route path="*" element={<NoPage />} />
             <Route path="blogs/Tirupathi" element={<TirupatiBlog/>}/>
+            <Route path="blogs/MysoreBlog" element={<MysoreBlog/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
