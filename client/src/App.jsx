@@ -15,6 +15,7 @@ import MysoreBlog from "./components/BlogPages/MysoreBlog";
 import ScrollToTop from "./pages/ScrollToTop";
 
 import ReactGA from "react-ga4";
+import Bengaluru from "./components/BlogPages/Bengaluru";
 
 ReactGA.initialize("G-NB0FP6LYJV");
 ReactGA.send("pageview");
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="*" element={<NoPage />} />
             <Route path="blogs/Tirupathi" element={<TirupatiBlog/>}/>
             <Route path="blogs/MysoreBlog" element={<MysoreBlog/>}/>
+            <Route path="blogs/Bengaluru" element={<Bengaluru/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

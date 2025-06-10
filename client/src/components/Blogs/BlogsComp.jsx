@@ -1,9 +1,9 @@
 
 import BlogCard from "./BlogCard";
 import Img1 from "../../assets/Blogs/1.png";
-import Img2 from "../../assets/places/water.jpg";
-import Img3 from "../../assets/places/boat.jpg";
-import Img4 from "../../assets/Blogs/Mysore/palace.jpg";
+import Img3 from "../../assets/Blogs/Bengaluru/vidanaSoudha.webp";
+import Img2 from "../../assets/Blogs/Mysore/palace.jpg";
+
 
 const BlogsData = [
   {
@@ -19,29 +19,30 @@ const BlogsData = [
     id: 2,
     image: Img2,
     alt: "Travihara",
-    title: "Top places to visit in US",
-    author: "Someone",
-    date: "April 22, 2022",
-    to:"Tirupathi",
-  },
-  {
-    id: 3,
-    image: Img3,
-    alt: "Travihara",
-    title: "Top places to visit in Japan",
-    author: "Someone",
-    date: "April 22, 2022",
-    to:"Tirupathi",
-  },
-  {
-    id: 4,
-    image: Img4,
-    alt: "Travihara",
     title: "One day package in Mysore",
     author: "Rakshith",
     date: "April 22, 2022",
     to:"MysoreBlog",
   },
+  {
+    id: 3,
+    image: Img3,
+    alt: "Travihara",
+    title: "One day package in Bengaluru",
+    author: "Anonymous",
+    date: "April 22, 2022",
+    to:"Bengaluru",
+  },
+  // {
+  //   id: 4,
+  //   image: Img1,
+  //   alt: "Travihara",
+  //   title: "Top places to visit in Japan",
+  //   author: "Someone",
+  //   date: "April 22, 2022",
+  //   to:"Tirupathi",
+  // },
+  
 ];
 
 const BlogsComp = () => {
