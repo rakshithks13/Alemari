@@ -3,14 +3,9 @@ import BlogCard from "./BlogCard";
 import Img1 from "../../assets/Blogs/1.png";
 import Img3 from "../../assets/Blogs/Bengaluru/vidanaSoudha.webp";
 import Img2 from "../../assets/Blogs/Mysore/palace.jpg";
-import TagManager from 'react-gtm-module';
 
 
-const tagManagerArgs = {
-  gtmId: 'GTM-59GXFW3R'
-};
 
-TagManager.initialize(tagManagerArgs);
 
 
 const BlogsData = [
