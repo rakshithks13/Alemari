@@ -1,6 +1,14 @@
-import React from "react";
+
 import BlogsComp from "../components/Blogs/BlogsComp";
 import Location from "../components/Location/Location";
+import TagManager from 'react-gtm-module';
+
+
+const tagManagerArgs = {
+  gtmId: 'GTM-59GXFW3R'
+};
+
+TagManager.initialize(tagManagerArgs);
 
 const About = () => {
   return (
