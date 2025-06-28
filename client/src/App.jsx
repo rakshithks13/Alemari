@@ -1,5 +1,5 @@
 import React from "react";
-
+import TagManager from 'react-gtm-module';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
@@ -19,6 +19,12 @@ import Bengaluru from "./components/BlogPages/Bengaluru";
 
 ReactGA.initialize("G-NB0FP6LYJV");
 ReactGA.send("pageview");
+
+const tagManagerArgs = {
+  gtmId: 'GTM-59GXFW3R'
+};
+
+TagManager.initialize(tagManagerArgs);
 
 const App = () => {
   React.useEffect(() => {

@@ -31,12 +31,17 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
               />
               <input
                 type="email"
-                placeholder="email"
+                placeholder="Email"
+                className="w-full rounded-full border border-gray-300 dark:border-gray-500 dark:bg-gray-800 px-2 py-1 mb-4"
+              />
+              <input
+                type="number"
+                placeholder="Number"
                 className="w-full rounded-full border border-gray-300 dark:border-gray-500 dark:bg-gray-800 px-2 py-1 mb-4"
               />
               <input
                 type="text"
-                placeholder="Address"
+                placeholder="Note"
                 className="w-full rounded-full border border-gray-300 dark:border-gray-500 dark:bg-gray-800 px-2 py-1 mb-4"
               />
               <div className="flex justify-center">
