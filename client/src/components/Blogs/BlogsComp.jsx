@@ -21,7 +21,7 @@ const BlogsData = [
   },
    {
     id: 2,
-    image: Img1,
+    image: Img2,
     alt: "Travihara",
     title: "Shirdi Package",
     author: "Anonymous",

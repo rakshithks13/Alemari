@@ -22,7 +22,7 @@ export default function Shirdi() {
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        <img src={Banner || "/placeholder.svg"} alt="Shirdi Sai Baba Temple" className="w-full h-full object-cover" />
+        <img src={Banner || "/placeholder.svg"} alt="Travihara Shirdi Sai Baba Temple " className="w-full h-full object-cover" />
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-4xl px-6">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Discover Inner Peace</h1>
@@ -89,7 +89,7 @@ export default function Shirdi() {
             <div>
               <img
                 src={ShirdiMain || "/placeholder.svg"}
-                alt="Shirdi Sai Baba Temple Complex"
+                alt="Travihara Shirdi Sai Baba Temple "
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
@@ -232,7 +232,7 @@ export default function Shirdi() {
             <div className="relative group overflow-hidden rounded-lg">
               <img
                 src={SaiBabaTemple || "/placeholder.svg"}
-                alt="Sai Baba Temple Shirdi"
+                alt="Travihara Sai Baba Temple Shirdi"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -245,7 +245,7 @@ export default function Shirdi() {
             <div className="relative group overflow-hidden rounded-lg">
               <img
                 src={Trayambakeshwar || "/placeholder.svg"}
-                alt="Trayambakeshwar Jyotirlinga"
+                alt="Travihara Trayambakeshwar Jyotirlinga"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -258,7 +258,7 @@ export default function Shirdi() {
             <div className="relative group overflow-hidden rounded-lg">
               <img
                 src={Siddhivinayak || "/placeholder.svg"}
-                alt="Siddhivinayak Temple"
+                alt="Travihara Siddhivinayak Temple"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
