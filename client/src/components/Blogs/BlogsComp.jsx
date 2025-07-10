@@ -1,7 +1,7 @@
 
 import BlogCard from "./BlogCard";
 import Img1 from "../../assets/Blogs/1.png";
-import Img2 from "../../assets/Blogs/Shirdi/shirdiMain.jpeg";
+// import Img2 from "../../assets/Blogs/Shirdi/shirdiMain.jpeg";
 import Img3 from "../../assets/Blogs/Mysore/palace.jpg";
 import Img4 from "../../assets/Blogs/Bengaluru/vidanaSoudha.webp";
 
@@ -21,7 +21,7 @@ const BlogsData = [
   },
    {
     id: 2,
-    image: Img2,
+    image: Img1,
     alt: "Travihara",
     title: "Shirdi Package",
     author: "Anonymous",

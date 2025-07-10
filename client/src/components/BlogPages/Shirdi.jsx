@@ -4,7 +4,7 @@ import { Badge } from "../Ui/Badge"
 import { Button } from "../Ui/Button"
 import Banner from "../../assets/Blogs/Shirdi/shirdiBanner.jpeg"
 // import SaiBabaTemple from "../../assets/Blogs/Shirdi/shirdiMain.jpeg"
-import Shirdi1 from "../../assets/Blogs/Shirdi/shirdiMain.jpeg"
+// import Shirdi1 from "../../assets/Blogs/Shirdi/shirdiMain.jpeg"
 import SaiBabaTemple from "../../assets/Blogs/Shirdi/shirdiTemple.jpeg"
 import Trayambakeshwar from "../../assets/Blogs/Shirdi/trayambakeshwar.jpeg"
 import Siddhivinayak from "../../assets/Blogs/Shirdi/Siddivinayaka.jpeg"
@@ -89,7 +89,7 @@ export default function Shirdi() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src={Shirdi1 || "/placeholder.svg"}
+                src={Banner || "/placeholder.svg"}
                 alt="Shirdi Sai Baba Temple Complex"
                 className="rounded-lg shadow-lg w-full"
               />
