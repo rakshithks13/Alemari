@@ -238,10 +238,9 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                     className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 resize-none"
                   />
                 </div>
-
                 {/* Summary Card */}
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-                  <h4 className="font-semibold text-gray-800 mb-4">Booking Summary</h4>
+                  <h4 className="font-semibold text-gray-800 mb-4">Booking Details</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Name:</span>

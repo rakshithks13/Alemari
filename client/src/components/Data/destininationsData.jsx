@@ -21,8 +21,8 @@ const destinations = [
     image: North,
     alt: "Travihara",
     location: "North India",
-    price: "₹15k",
-    duration: "28 Days Trip",
+    price: "₹35k",
+    duration: "7 Days Trip",
   },
 ];
 
