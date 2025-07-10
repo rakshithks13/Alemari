@@ -1,207 +1,262 @@
+"use client"
 
-
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 const destinations = [
-  {
-    label: "Paris",
-    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80",
-    alt: "Travihara",
-    // tours: "100+ Tours",
-    badge: "Coming Soon",
-  },
-  {
-    label: "Singapore",
-    img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80",
-    alt: "Travihara",
-    // tours: "300+ Tours",
-    badge: "Coming Soon",
-  },
-  {
-    label: "Roma",
-    img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80",
-    alt: "Travihara",
-    // tours: "400+ Tours",
-    badge: "Coming Soon",
-  },
-  {
+    {
     label: "Bangkok",
     img: "https://images.unsplash.com/photo-1451471016731-e963a8588be8?auto=format&fit=crop&w=400&q=80",
     alt: "Travihara",
-    // tours: "100+ Tours",
     badge: "Coming Soon",
   },
   {
     label: "Bali",
     img: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80",
     alt: "Travihara",
-    // tours: "600+ Tours",
     badge: "Coming Soon",
   },
   {
     label: "Phuket",
     img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80",
     alt: "Travihara",
-    // tours: "200+ Tours",
+    badge: "Coming Soon",
+  },
+  {
+    label: "Paris",
+    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80",
+    alt: "Travihara",
+    badge: "Coming Soon",
+  },
+  {
+    label: "Singapore",
+    img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80",
+    alt: "Travihara",
+    badge: "Coming Soon",
+  },
+  {
+    label: "Roma",
+    img: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=400&q=80",
+    alt: "Travihara",
     badge: "Coming Soon",
   },
   {
     label: "Tokyo",
     img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     alt: "Travihara",
-    // tours: "700+ Tours",
     badge: "Coming Soon",
   },
   {
     label: "Cappadocia",
     img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80",
     alt: "Travihara",
-    // tours: "900+ Tours",
     badge: "Coming Soon",
   },
 ]
 
-// Custom visible count for responsive (mobile: 2, sm: 3, md: 4, lg: 6)
-const getVisibleCount = (width) => {
-  if (width < 640) return 2
-  if (width < 768) return 3
-  if (width < 1024) return 4
-  return 6
-}
-
 const TrendingDestinations = () => {
-  const [currentIdx, setCurrentIdx] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(6) // Default to avoid SSR issues
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [itemsPerSlide, setItemsPerSlide] = useState(1)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const carouselRef = useRef(null)
 
+  // Calculate items per slide based on screen size
   useEffect(() => {
-    // Set initial visible count after component mounts
-    setVisibleCount(getVisibleCount(window.innerWidth))
+    const updateItemsPerSlide = () => {
+      const width = window.innerWidth
+      if (width >= 1024) {
+        setItemsPerSlide(4) // lg: 4 items
+      } else if (width >= 768) {
+        setItemsPerSlide(3) // md: 3 items
+      } else if (width >= 640) {
+        setItemsPerSlide(2) // sm: 2 items
+      } else {
+        setItemsPerSlide(1) // mobile: 1 item
+      }
+    }
 
-    const onResize = () => setVisibleCount(getVisibleCount(window.innerWidth))
-    window.addEventListener("resize", onResize)
-    return () => window.removeEventListener("resize", onResize)
+    updateItemsPerSlide()
+    window.addEventListener("resize", updateItemsPerSlide)
+    return () => window.removeEventListener("resize", updateItemsPerSlide)
   }, [])
 
-  // Calculate maximum possible slides
-  const maxSlides = Math.max(0, destinations.length - visibleCount)
+  const totalSlides = Math.ceil(destinations.length / itemsPerSlide)
 
-  // Calculate dots count - only show dots if we can actually slide
-  const dotsCount = maxSlides > 0 ? maxSlides - 1 : 1
-
-  // Reset current index if it exceeds maximum when visible count changes
+  // Auto-play functionality
   useEffect(() => {
-    if (currentIdx > maxSlides) {
-      setCurrentIdx(0)
+    if (!isAutoPlaying || totalSlides <= 1) return
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [totalSlides, isAutoPlaying])
+
+  // Touch/swipe handling for mobile
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX)
+    setIsAutoPlaying(false)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe && currentSlide < totalSlides - 1) {
+      setCurrentSlide(currentSlide + 1)
     }
-  }, [visibleCount, maxSlides, currentIdx])
+    if (isRightSwipe && currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1)
+    }
 
-  // Auto-scroll effect
-  useEffect(() => {
-    // Only auto-scroll if there are items to scroll to
-    if (maxSlides <= 0) return
+    setTimeout(() => setIsAutoPlaying(true), 5000)
+  }
 
-    const timer = setInterval(() => {
-      setCurrentIdx((prev) => (prev >= maxSlides ? 0 : prev + 1))
-    }, 2500)
+  const goToSlide = (slideIndex) => {
+    setCurrentSlide(slideIndex)
+    setIsAutoPlaying(false)
+    setTimeout(() => setIsAutoPlaying(true), 5000)
+  }
 
-    return () => clearInterval(timer)
-  }, [maxSlides])
+//   const getCurrentSlideItems = () => {
+//     const startIndex = currentSlide * itemsPerSlide
+//     return destinations.slice(startIndex, startIndex + itemsPerSlide)
+//   }
 
-  // If there are fewer or equal destinations than visible count, don't show carousel
-  if (destinations.length <= visibleCount) {
-    return (
-      <div className="container">
-        <section className="py-10 md:py-16 bg-white select-none">
-          <div className="max-w-7xl mx-auto px-4 md:px-0">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#181E4B] mb-8" data-aos="fade-right" data-aos-duration="1000">Trending destinations</h2>
-            <div className="flex justify-center gap-4 md:gap-8">
-              {destinations.map((dest) => (
-                <div key={dest.label} className="flex flex-col items-center">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden flex items-center justify-center mb-3 shadow-sm">
-                    <img
-                      src={dest.img || "/placeholder.svg"}
-                      alt={dest.label}
-                      className="w-full h-full object-cover"
-                      draggable="false"
-                    />
-                    {dest.badge && (
-                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[0.25rem] sm:-translate-y-[0.5rem] px-3 sm:px-5 py-1 sm:py-1.5 bg-white/80 text-[#222] font-semibold rounded-full text-sm sm:text-base select-none shadow-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {dest.badge}
-                      </span>
-                    )}
+  return (
+    <section className="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">Upcoming Destinations</h2>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            Discover the worlds most popular travel destinations
+          </p>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative">
+          <div
+            ref={carouselRef}
+            className="overflow-hidden rounded-2xl"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+              }}
+            >
+              {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                <div key={slideIndex} className="w-full flex-shrink-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-2">
+                    {destinations
+                      .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                      .map((destination, index) => (
+                        <div
+                          key={`${slideIndex}-${index}`}
+                          className="group relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+                        >
+                          {/* Image Container */}
+                          <div className="relative h-48 sm:h-52 md:h-56 overflow-hidden">
+                            <img
+                              src={destination.img || "/placeholder.svg"}
+                              alt={destination.alt}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              draggable="false"
+                            />
+
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                            {/* Badge */}
+                            {destination.badge && (
+                              <div className="absolute top-4 right-4">
+                                <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                  {destination.badge}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Content */}
+                          <div className="p-4">
+                            <h3 className="text-xl flex justify-center font-bold text-slate-800 group-hover:text-orange-600 transition-colors">
+                              {destination.label}
+                            </h3>
+                            {/* <p className="text-slate-600 mb-4">{destination.description}</p> */}
+                          </div>
+
+                          {/* Hover Effect Border */}
+                          <div className="absolute inset-0 border-2 border-transparent group-hover:border-orange-200 rounded-xl transition-colors duration-300" />
+                        </div>
+                      ))}
                   </div>
-                  <div className="font-semibold text-[#181E4B] text-sm sm:text-base">{dest.label}</div>
-                  <div className="text-[#181E4B] opacity-60 text-xs">{dest.tours}</div>
                 </div>
               ))}
             </div>
           </div>
-        </section>
-      </div>
-    )
-  }
 
-  return (
-    <div className="container">
-      <section className="py-10 md:py-16 bg-white select-none">
-        <div className="max-w-7xl mx-auto px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#181E4B] mb-8">Trending destinations</h2>
-          <div className="relative flex flex-col items-center">
-            {/* Carousel */}
-            <div className="w-full overflow-hidden">
-              <div
-                className="flex transition-transform duration-700"
-                style={{
-                  transform: `translateX(-${(currentIdx * 100) / visibleCount}%)`,
-                  width: `${(destinations.length * 100) / visibleCount}%`,
-                }}
+          {/* Navigation Arrows - Hidden on mobile */}
+          {totalSlides > 1 && (
+            <>
+              <button
+                onClick={() => goToSlide(Math.max(0, currentSlide - 1))}
+                disabled={currentSlide === 0}
+                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white shadow-lg rounded-full items-center justify-center transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
               >
-                {destinations.map((dest) => (
-                  <div
-                    key={dest.label}
-                    className="flex flex-col items-center flex-shrink-0"
-                    style={{ width: `${100 / destinations.length}%` }}
-                  >
-                    <div className="group relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden flex items-center justify-center mb-3 shadow-sm">
-                      <img
-                        src={dest.img || "/placeholder.svg"}
-                        alt={dest.label}
-                        className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
-                        draggable="false"
-                      />
+                <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-                      {dest.badge && (
-                        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 sm:px-5 py-1 sm:py-1.5 bg-white/80 text-[#222] font-semibold rounded-full text-sm sm:text-base select-none shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {dest.badge}
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="font-semibold text-[#181E4B] text-sm sm:text-base">{dest.label}</div>
-                    <div className="text-[#181E4B] opacity-60 text-xs">{dest.tours}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Dots - Only show if there are multiple slides */}
-            {dotsCount >  1 && (
-              <div className="flex gap-2 justify-center mt-7">
-                {Array.from({ length: dotsCount }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    className={`w-6 h-1.5 rounded-full transition-all duration-200 ${idx === currentIdx ? "bg-[#181E4B]" : "bg-[#E5E5E5]"
-                      }`}
-                    onClick={() => setCurrentIdx(idx)}
-                    aria-label={`Go to carousel position ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+              <button
+                onClick={() => goToSlide(Math.min(totalSlides - 1, currentSlide + 1))}
+                disabled={currentSlide === totalSlides - 1}
+                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white shadow-lg rounded-full items-center justify-center transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed z-10"
+              >
+                <svg className="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </>
+          )}
         </div>
-      </section>
-    </div>
+
+        {/* Dots Navigation */}
+        {totalSlides > 1 && (
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                  index === currentSlide ? "bg-orange-500 w-8" : "bg-slate-300 hover:bg-slate-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Mobile Swipe Indicator */}
+        {/* <div className="md:hidden text-center mt-6">
+          <p className="text-slate-500 text-sm">Swipe left or right to explore more destinations</p>
+        </div> */}
+      </div>
+    </section>
   )
 }
 

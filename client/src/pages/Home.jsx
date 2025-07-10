@@ -7,6 +7,7 @@ import Destinations from "../components/Destininations/Destininations";
 import Testimonial2 from "../components/Testimonial/Testimonial2";
 import BookingSteps from "../components/BookingSteps/BookingSteps";
 import TrendingDestinations from "../components/TrendingDestinnations/TrendingDestinations";
+// import TrendingDestinationsOld from "../components/TrendingDestinnations/TrendingDestinationsOld";
 import Categories from "../components/Categories/Categories";
 import Services from "../components/Services/Services";
 import Subscribe from "../components/Subscribe/Subscribe";
@@ -26,6 +27,7 @@ const Home = () => {
           </section>
           <Categories />
           <TrendingDestinations />
+          {/* <TrendingDestinationsOld/> */}
 
           <Services />
           <Destinations />
