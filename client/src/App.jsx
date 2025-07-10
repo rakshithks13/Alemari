@@ -10,10 +10,14 @@ import NoPage from "./pages/NoPage";
 import PlacesRoute from "./pages/PlacesRoute";
 import About from "./pages/About";
 import ScrollToTop from "./pages/ScrollToTop";
+import TermsConditions from "./components/Legal/Terms"
+import PrivacyPolicy from "./components/Legal/Privacy";
+import Cookie from "./components/Legal/CookieTerms"
 
 import TirupatiBlog from "./components/BlogPages/Tirupathi";
 import MysoreBlog from "./components/BlogPages/MysoreBlog";
 import Bengaluru from "./components/BlogPages/Bengaluru";
+import Shirdi from "./components/BlogPages/Shirdi";
 import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
 
 import AOS from "aos";
@@ -68,15 +72,21 @@ const AppContent = () => {
     <>
       <ScrollToTop />
       <Routes>
+        <Route path="*" element={<NoPage />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
+          <Route path="itinerary" element={<Blogs />} />
           <Route path="best-places" element={<PlacesRoute />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NoPage />} />
-          <Route path="blogs/Tirupathi" element={<TirupatiBlog />} />
-          <Route path="blogs/MysoreBlog" element={<MysoreBlog />} />
-          <Route path="blogs/Bengaluru" element={<Bengaluru />} />
+          <Route path="itinerary/Tirupathi" element={<TirupatiBlog />} />
+          <Route path="itinerary/MysoreBlog" element={<MysoreBlog />} />
+          <Route path="itinerary/Bengaluru" element={<Bengaluru />} />
+          <Route path="itinerary/Shirdi" element={<Shirdi />} />
+          <Route path="terms" element={<TermsConditions />} />
+          <Route path="cookie" element={<Cookie />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
+          
         </Route>
       </Routes>
       <FloatingWhatsApp />

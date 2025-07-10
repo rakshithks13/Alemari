@@ -130,15 +130,15 @@ export default function Bengaluru() {
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-4">
             <Button size="lg" className="bg-white text-red-600 hover:bg-orange-50 px-8 py-3">
               <Phone className="w-5 h-5 mr-2" />
-              +91 1234567890
+              +91 91088-34112
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-3"
+              className="border-white text-black hover:bg-white hover:text-orange-600 px-8 py-3"
             >
               <Mail className="w-5 h-5 mr-2" />
-              support@travihara.com
+              travihara01@gmail.com
             </Button>
           </div>
           <p className="text-orange-100">www.travihara.com</p>

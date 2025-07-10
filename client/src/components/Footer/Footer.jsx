@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaLocationArrow,
   FaMobileAlt,
+  FaPinterest,
 } from "react-icons/fa";
 // import NatureVid from "../../assets/video/footer.mp4";
 import { Link } from "react-router-dom";
@@ -19,14 +20,50 @@ const FooterLinks = [
     title: "About",
     link: "/about",
   },
+  // {
+  //   title: "Best Places",
+  //   link: "/best-places",
+  // },
   {
-    title: "Best Places",
-    link: "/best-places",
+    title: "Itinerary",
+    link: "/itinerary",
+  },
+];
+
+const FooterItinerary = [
+  {
+    title: "Tirupati",
+    link: "/itinerary/Tirupathi",
   },
   {
-    title: "Blogs",
-    link: "/blogs",
+    title: "Shirdi",
+    link: "/itinerary/shirdi",
   },
+  {
+    title: "Bangalore 1D",
+    link: "/itinerary/Bengaluru",
+  },
+  {
+    title: "Mysore 1D",
+    link: "/itinerary/MysoreBlog",
+  },
+  
+];
+
+const FooterLegal = [
+  {
+    title: "Terms & Conditions",
+    link: "/terms",
+  },
+  {
+    title: "Privacy Policy",
+    link: "/privacy",
+  },
+  {
+    title: "Cookie Policy",
+    link: "/cookie",
+  },
+  
 ];
 
 const Footer = () => {
@@ -58,20 +95,24 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3 mt-3">
                 <FaMobileAlt />
-                <p>+91 123456789</p>
+                <p>+91 91088-34112</p>
               </div>
               {/* social handles */}
               <div>
                 <div className="flex items-center gap-3 mt-6">
-                  <a href="https://www.instagram.com/travihara_tours/">
+                  <a href="https://www.instagram.com/travihara.official/">
                     <FaInstagram className="text-3xl" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.facebook.com/profile.php?id=61577990481976">
                     <FaFacebook className="text-3xl" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/company/107545495/admin/dashboard/">
                     <FaLinkedin className="text-3xl" />
                   </a>
+                  <a href="https://in.pinterest.com/travihara/">
+                    <FaPinterest className="text-3xl"/>
+
+                    </a>
                 </div>
               </div>
             </div>
@@ -98,10 +139,10 @@ const Footer = () => {
               <div>
                 <div className="py-8 px-4">
                   <h1 className="text-xl font-bold text-justify sm:text-left mb-3">
-                    Important Links
+                    Itinerary
                   </h1>
                   <ul className="flex flex-col gap-3">
-                    {FooterLinks.map((link) => (
+                    {FooterItinerary.map((link) => (
                       <li className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-700 dark:text-gray-200">
                         <Link
                           to={link.link}
@@ -117,16 +158,16 @@ const Footer = () => {
               <div>
                 <div className="py-8 px-4">
                   <h1 className="text-xl font-bold text-justify sm:text-left mb-3">
-                    Important Links
+                    Legal
                   </h1>
                   <ul className="flex flex-col gap-3">
-                    {FooterLinks.map((link) => (
+                    {FooterLegal.map((legal) => (
                       <li className="cursor-pointer hover:translate-x-1 duration-300 hover:!text-primary space-x-1 text-gray-700 dark:text-gray-200">
                         <Link
-                          to={link.link}
+                          to={legal.link}
                           onClick={() => window.scrollTo(0, 0)}
                         >
-                          <span>{link.title}</span>
+                          <span>{legal.title}</span>
                         </Link>
                       </li>
                     ))}

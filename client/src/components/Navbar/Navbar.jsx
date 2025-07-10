@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../../assets/Travihara.svg";
 import { NavLink, Link } from "react-router-dom";
 import { FaCaretDown } from "react-icons/fa";
@@ -11,17 +11,18 @@ export const NavbarLinks = [
     link: "/",
   },
   {
+    name: "Itinerary",
+    link: "/itinerary",
+  },
+  // {
+  //   name: "Best Places",
+  //   link: "/best-places",
+  // },
+  {
     name: "About",
     link: "/about",
   },
-  {
-    name: "Blogs",
-    link: "/blogs",
-  },
-  {
-    name: "Best Places",
-    link: "/best-places",
-  },
+  
 ];
 
 const DropdownLinks = [
@@ -51,8 +52,8 @@ const Navbar = ({ handleOrderPopup }) => {
         <div className="bg-gradient-to-r from-primary to-secondary text-white ">
           <div className="container py-[2px] sm:block hidden">
             <div className="flex items-center justify-between">
-              <p className="text-sm">20% off on next booking</p>
-              <p>Mobile no. +91 123456789</p>
+              <p className="text-sm">10% off on first booking</p>
+              <p>Mobile no. +91 91088-34112</p>
             </div>
           </div>
         </div>
@@ -72,15 +73,15 @@ const Navbar = ({ handleOrderPopup }) => {
                   </NavLink>
                 </li>
                 <li className="py-4">
-                  <NavLink to="/blogs" activeClassName="active">
-                    Blogs
+                  <NavLink to="/itinerary" activeClassName="active">
+                    Itinerary
                   </NavLink>
                 </li>
-                <li className="py-4">
+                {/* <li className="py-4">
                   <NavLink to="/best-places" activeClassName="active">
                     Best Places
                   </NavLink>
-                </li>
+                </li> */}
                 <li className="py-4">
                   <NavLink to="/about" activeClassName="active">
                     About

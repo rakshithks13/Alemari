@@ -20,9 +20,9 @@ const LandingHero = () => {
 
   const handleSearch = () => {
     if (selectedDestination === "Tirupathi") {
-      navigate("/blogs/Tirupathi");
+      navigate("/itinerary/Tirupathi");
     } else {
-      navigate(`/blogs/${selectedDestination.toLowerCase()}`);
+      navigate(`/itinerary/${selectedDestination.toLowerCase()}`);
     }
   };
 

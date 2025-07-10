@@ -5,7 +5,7 @@ const BlogCard = ({ image, date, title, author, to }) => {
   return (
     <>
       <Link
-        to={`/blogs/${to}`}
+        to={`/itinerary/${to}`}
         onClick={() => {
           window.scrollTo(0, 0);
           window.scroll({

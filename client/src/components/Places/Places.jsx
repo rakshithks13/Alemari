@@ -65,7 +65,7 @@ const PlacesData = [
 const Places = ({ handleOrderPopup }) => {
   return (
     <>
-      <div className="dark:bg-gray-900 dark:text-white bg-gray-50 py-10">
+      <div className="dark:bg-gray-900 mt-10 dark:text-white bg-gray-50 py-10">
         <section data-aos="fade-up" className="container ">
           <h1 className="text-3xl font-bold">Explore top destinations</h1>
           <p className="py-4">

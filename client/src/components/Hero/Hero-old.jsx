@@ -19,9 +19,9 @@ const Hero = () => {
   const handleSearch = () => {
     // Redirect to blog post URL - customize as needed
     if (selectedDestination === "Tirupathi") {
-      navigate("/blogs/");
+      navigate("/itinerary/");
     } else {
-      navigate(`/blogs/${selectedDestination.toLowerCase()}`);
+      navigate(`/itinerary/${selectedDestination.toLowerCase()}`);
     }
   };
 
