@@ -60,7 +60,7 @@ const BlogsComp = () => {
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {BlogsData.map((item) => (
-              <BlogCard key={item.id} {...item} />
+              <BlogCard key={item.id}  {...item} />
             ))}
           </div>
         </section>
