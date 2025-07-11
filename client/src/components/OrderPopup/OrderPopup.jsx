@@ -22,29 +22,103 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
     })
   }
 
+  const COOLDOWN_MINUTES = 2;
+  const today = new Date().toISOString().split("T")[0];
+
+
+  const isInCooldown = () => {
+    const lastSubmit = localStorage.getItem("lastSubmitTime");
+    if (!lastSubmit) return false;
+    const elapsed = (Date.now() - parseInt(lastSubmit)) / 60000;
+    return elapsed < COOLDOWN_MINUTES;
+  };
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    if (isInCooldown()) {
+      alert(`Please wait ${COOLDOWN_MINUTES} minutes before submitting again.`);
+      setIsSubmitting(false);
+      return;
+    }
 
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-    setOrderPopup(false)
+    // Basic validation
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      travelDate: "",
-      travelers: "1",
-      destination: "",
-      message: "",
-    })
-    setCurrentStep(1)
-  }
+    const { name, email, phone, travelDate, destination } = formData;
+
+    // Basic validation
+    if (!name || !email || !phone || !travelDate || !destination) {
+      alert("Please fill in all required fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const isValidEmail = (email) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValidEmail(email)) {
+      alert("Please enter a valid email address.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const isValidPhone = (phone) => /^[0-9]{10}$/.test(phone);
+
+    if (!isValidPhone(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      setIsSubmitting(false);
+      return;
+    }
+
+
+    if (!name || !email || !phone || !travelDate || !destination) {
+      alert("Please fill in all required fields.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.sheety.co/8349d26584f8a1e3934de01f220208ee/travelBookings/sheet1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sheet1: formData }),
+      });
+
+      const result = await response.json();
+      console.log("Success:", result);
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        localStorage.setItem("lastSubmitTime", Date.now().toString()); // Save cooldown timestamp
+        setOrderPopup(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          travelDate: "",
+          travelers: "1",
+          destination: "",
+          message: "",
+        });
+        setCurrentStep(1);
+      } else {
+        alert("Failed to submit form.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Failed to submit form.");
+    }
+
+    setIsSubmitting(false);
+  };
+
+
+
+
+
 
   const nextStep = () => {
     if (currentStep < 3) setCurrentStep(currentStep + 1)
@@ -55,6 +129,27 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
   }
 
   if (!orderPopup) return null
+
+  // Prevent Enter from submitting the form accidentally
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && currentStep < 3) {
+      e.preventDefault();
+    }
+  };
+
+  const handlePhoneKeyDown = (e) => {
+  const allowedKeys = [
+    "Backspace", "Tab", "ArrowLeft", "ArrowRight", "Delete",
+  ];
+
+  const isNumberKey = /^[0-9]$/.test(e.key);
+
+  if (!isNumberKey && !allowedKeys.includes(e.key)) {
+    e.preventDefault();
+  }
+};
+
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -122,6 +217,7 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="Full Name"
+                      onKeyDown={handleKeyDown}
                       required
                       className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700 placeholder-gray-400"
                     />
@@ -135,6 +231,7 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Email Address"
+                      onKeyDown={handleKeyDown}
                       required
                       className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700 placeholder-gray-400"
                     />
@@ -148,9 +245,13 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Phone Number"
+                      onKeyDown={handlePhoneKeyDown}
+                      pattern="[0-9]{10}"
+                      maxLength={10}
                       required
                       className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700 placeholder-gray-400"
                     />
+
                   </div>
                 </div>
               </div>
@@ -172,6 +273,8 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                       name="travelDate"
                       value={formData.travelDate}
                       onChange={handleInputChange}
+                      onKeyDown={handleKeyDown}
+                      min={today}
                       required
                       className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700"
                     />
@@ -233,6 +336,7 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
+                    onKeyDown={handleKeyDown}
                     placeholder="Tell us about your preferences, special requirements, or any questions you have..."
                     rows={5}
                     className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 resize-none"
@@ -269,11 +373,10 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                 type="button"
                 onClick={prevStep}
                 disabled={currentStep === 1}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
-                  currentStep === 1
-                    ? "text-gray-400 cursor-not-allowed"
-                    : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
-                }`}
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${currentStep === 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-gray-600 hover:text-gray-800 hover:bg-gray-100"
+                  }`}
               >
                 Previous
               </button>
@@ -282,9 +385,8 @@ const OrderPopup = ({ orderPopup, setOrderPopup }) => {
                 {[1, 2, 3].map((step) => (
                   <div
                     key={step}
-                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                      step === currentStep ? "bg-blue-600" : step < currentStep ? "bg-green-500" : "bg-gray-300"
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${step === currentStep ? "bg-blue-600" : step < currentStep ? "bg-green-500" : "bg-gray-300"
+                      }`}
                   />
                 ))}
               </div>
