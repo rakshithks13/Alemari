@@ -19,6 +19,8 @@ import MysoreBlog from "./components/BlogPages/MysoreBlog";
 import Bengaluru from "./components/BlogPages/Bengaluru";
 import Shirdi from "./components/BlogPages/Shirdi";
 import FloatingWhatsApp from "./components/FloatingIcons/Whatsapp";
+import Mantralayam from "./components/BlogPages/Mantralayam";
+import Kashi from "./components/BlogPages/Kashi";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -83,6 +85,8 @@ const AppContent = () => {
           <Route path="itinerary/MysoreBlog" element={<MysoreBlog />} />
           <Route path="itinerary/Bengaluru" element={<Bengaluru />} />
           <Route path="itinerary/Shirdi" element={<Shirdi />} />
+          <Route path="itinerary/Mantralayam" element={<Mantralayam />} />
+          <Route path="itinerary/Kashi" element={<Kashi />} />
           <Route path="terms" element={<TermsConditions />} />
           <Route path="cookie" element={<Cookie />} />
           <Route path="privacy" element={<PrivacyPolicy />} />

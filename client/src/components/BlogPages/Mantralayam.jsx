@@ -1,32 +1,31 @@
-import { Clock, MapPin, Star, Users, Plane, Phone, Mail, Check, X } from "lucide-react"
+import { Clock, MapPin, Star, Users, Plane,Bus,  Phone, Mail, Check, X } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../Ui/Card"
 import { Badge } from "../Ui/Badge"
 import { Button } from "../Ui/Button"
-import Banner from "../../assets/Blogs/Shirdi/shirdiBanner.jpeg"
-import ShirdiMain from "../../assets/Blogs/Shirdi/shirdiMain.jpeg"
-import SaiBabaTemple from "../../assets/Blogs/Shirdi/shirdiTemple.jpeg"
-import Trayambakeshwar from "../../assets/Blogs/Shirdi/trayambakeshwar.jpeg"
-import Siddhivinayak from "../../assets/Blogs/Shirdi/Siddivinayaka.jpeg"
+import Banner from "../../assets/Blogs/Mantralayam/MuttMantralayam.jpg"
+import MantralayamMain from "../../assets/Blogs/Mantralayam/mantralaya.jpeg"
+import RaghavendraSwamy from "../../assets/Blogs/Mantralayam/mantralayamm.jpeg"
+import PanchaMuki from "../../assets/Blogs/Mantralayam/panchamuki.webp"
+import Bichali from "../../assets/Blogs/Mantralayam/bichali.jpeg"
 
 
-// // Using placeholder images - replace with your actual Shirdi images
-// const Banner = "/placeholder.svg?height=600&width=1200"
-// const ShirdiMain = "/placeholder.svg?height=400&width=600"
-// const SaiBabaTemple = "/placeholder.svg?height=300&width=400"
-// const Trayambakeshwar = "/placeholder.svg?height=300&width=400"
-// const Siddhivinayak = "/placeholder.svg?height=300&width=400"
-
-export default function Shirdi() {
+export default function Mantralayam() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
       <div className="relative h-[70vh] bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        <img src={Banner || "/placeholder.svg"} alt="Travihara Shirdi Sai Baba Temple " className="w-full h-full object-cover" />
+        <img
+          src = {Banner}
+          alt="Mantralayam Sri Raghavendra Swamy Temple"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 flex items-center justify-center text-center">
           <div className="max-w-4xl px-6">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Discover Inner Peace</h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8">1N/2D Shirdi Sai Baba Darshan Tour from Bangalore</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Reconnect with Peace</h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-8">
+              1N/2D Mantralayam Sleeper Bus Spiritual Tour from Bangalore
+            </p>
             <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 text-lg">
               Book Your Spiritual Journey
             </Button>
@@ -37,11 +36,12 @@ export default function Shirdi() {
       {/* Introduction */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">A Soulful Escape Awaits</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">A Sacred Getaway with TRAVIHARA</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Are you longing for a soulful escape to reconnect with your spiritual side? Our 1 Night / 2 Days Shirdi
-            Darshan Package from Bangalore is designed to provide a blissful pilgrimage experience with all essentials
-            taken care of — from flights to accommodation to VIP darshan.
+            Looking to step away from the daily hustle and embrace divine serenity? TRAVIHARA presents a spiritually
+            uplifting 1 Night / 2 Days Mantralayam Tour Package from Bangalore — perfect for devotees of Sri Raghavendra
+            Swamy and spiritual seekers desiring a short yet soulful pilgrimage. This all-inclusive road trip by AC /
+            Non AC sleeper bus ensures a comfortable journey, guided temple visits, and a peaceful experience.
           </p>
         </div>
 
@@ -49,12 +49,12 @@ export default function Shirdi() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           <Card className="border-blue-200 hover:shadow-lg transition-shadow">
             <CardHeader>
-              <Plane className="w-12 h-12 text-blue-600 mb-4" />
-              <CardTitle className="text-xl">Hassle-Free Flights</CardTitle>
+              <Bus className="w-12 h-12 text-blue-600 mb-4" />
+              <CardTitle className="text-xl">AC/Non AC Sleeper Bus</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                Round-trip airfare from Bangalore to Mumbai/Pune with comfortable transfers
+                Travel overnight in a clean, cozy sleeper bus with pickup/drop from Bangalore
               </p>
             </CardContent>
           </Card>
@@ -62,11 +62,11 @@ export default function Shirdi() {
           <Card className="border-blue-200 hover:shadow-lg transition-shadow">
             <CardHeader>
               <Star className="w-12 h-12 text-blue-600 mb-4" />
-              <CardTitle className="text-xl">VIP Darshan</CardTitle>
+              <CardTitle className="text-xl">Guided Assistance</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                No waiting in long queues! VIP darshan at Sai Baba Temple and Trayambakeshwar
+                Our local guide assists with hotel transfer, darshan coordination, and temple visits
               </p>
             </CardContent>
           </Card>
@@ -74,22 +74,24 @@ export default function Shirdi() {
           <Card className="border-blue-200 hover:shadow-lg transition-shadow">
             <CardHeader>
               <Users className="w-12 h-12 text-blue-600 mb-4" />
-              <CardTitle className="text-xl">4-Star Accommodation</CardTitle>
+              <CardTitle className="text-xl">Divine Temple Circuit</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">Premium hotel in Shirdi with twin/double sharing rooms</p>
+              <p className="text-gray-600">
+                Visit holy sites like Sri Raghavendra Swamy Mutt, Panchamukhi Anjaneya Temple, and Bichali Appanacharya
+              </p>
             </CardContent>
           </Card>
         </div>
 
         {/* Why Choose Us Section */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">✨ Why Choose Our Shirdi Tour Package?</h3>
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">✨ Why Choose Travihara for Mantralayam?</h3>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src={ShirdiMain || "/placeholder.svg"}
-                alt="Travihara Shirdi Sai Baba Temple "
+                src={MantralayamMain}
+                alt="Mantralayam Sri Raghavendra Swamy Temple"
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
@@ -99,31 +101,29 @@ export default function Shirdi() {
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Hassle-Free Experience</h4>
+                  <h4 className="font-semibold text-white mb-2">AC/Non AC Sleeper Bus Travel</h4>
                   <p className="text-blue-100">
-                    Enjoy round-trip airfare with comfortable A/C pushback vehicle transfers
+                    Travel overnight in a clean, cozy sleeper bus with pickup/drop from Bangalore
                   </p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">All-Inclusive Meals</h4>
-                  <p className="text-blue-100">Delicious vegetarian meals including breakfast, lunch, and dinner</p>
+                  <h4 className="font-semibold text-white mb-2">Guided Temple Visits</h4>
+                  <p className="text-blue-100">Our local guide assists with darshan coordination and temple visits</p>
                 </div>
               </div>
-
               <div className="flex items-start space-x-4">
                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Spiritual Sightseeing</h4>
+                  <h4 className="font-semibold text-white mb-2">Simple & Peaceful Stay</h4>
                   <p className="text-blue-100">
-                    Visit multiple sacred temples including Trayambakeshwar Jyotirlinga and Siddhivinayak
+                    Freshen up and relax in a hygienic lodge near the temple, with breakfast included
                   </p>
                 </div>
               </div>
@@ -133,47 +133,29 @@ export default function Shirdi() {
 
         {/* Itinerary Section */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">🧭 Detailed Itinerary</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">🧭 Detailed 3-Day Itinerary</h3>
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Day 1 */}
             <Card className="border-2 border-blue-200">
               <CardHeader className="bg-blue-600 text-white">
                 <CardTitle className="flex items-center">
                   <Clock className="w-6 h-6 mr-2" />
-                  Day 1 - Bangalore to Shirdi
+                  Day 1 - Bangalore → Mantralayam
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-4 pt-4">
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-blue-100">
-                      Morning
-                    </Badge>
-                    <p className="text-gray-700">Assemble at Kempegowda International Airport</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Badge variant="outline" className="bg-blue-100">
-                      Flight
-                    </Badge>
-                    <p className="text-gray-700">Fly to Mumbai/Pune</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Badge variant="outline" className="bg-blue-100">
-                      Afternoon
-                    </Badge>
-                    <p className="text-gray-700">Visit Siddhivinayak & Mahalakshmi Temple</p>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Badge variant="outline" className="bg-blue-100">
                       Evening
                     </Badge>
-                    <p className="text-gray-700">Trayambakeshwar Jyotirlinga darshan</p>
+                    <p className="text-gray-700">Departure from Bangalore by sleeper bus</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-blue-100">
                       Night
                     </Badge>
-                    <p className="text-gray-700">Arrive Shirdi, check-in & dinner</p>
+                    <p className="text-gray-700">Overnight travel to Mantralayam</p>
                   </div>
                 </div>
               </CardContent>
@@ -184,40 +166,54 @@ export default function Shirdi() {
               <CardHeader className="bg-indigo-600 text-white">
                 <CardTitle className="flex items-center">
                   <MapPin className="w-6 h-6 mr-2" />
-                  Day 2 - Shirdi Darshan & Return
+                  Day 2 - Darshan & Temple Visits
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-4 pt-4">
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-indigo-100">
-                      Early Morning
+                      5:00 AM
                     </Badge>
-                    <p className="text-gray-700">VIP darshan at Shirdi Sai Baba Temple</p>
+                    <p className="text-gray-700">Arrival & hotel transfer</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-indigo-100">
                       Morning
                     </Badge>
-                    <p className="text-gray-700">Visit Gurusthan, Dwarakamai, Chawadi</p>
+                    <p className="text-gray-700">Sri Raghavendra Swamy Temple darshan</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-indigo-100">
                       Afternoon
                     </Badge>
-                    <p className="text-gray-700">Shanishingnapur Temple visit</p>
+                    <p className="text-gray-700">Bichali Appanacharya & Panchamukhi Anjaneya</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Badge variant="outline" className="bg-indigo-100">
-                      Evening
+                      8:30 PM
                     </Badge>
-                    <p className="text-gray-700">Return to Pune Airport</p>
+                    <p className="text-gray-700">Return journey to Bangalore</p>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Day 3 */}
+            <Card className="border-2 border-green-200">
+              <CardHeader className="bg-green-600 text-white">
+                <CardTitle className="flex items-center">
+                  <Star className="w-6 h-6 mr-2" />
+                  Day 3 - Arrival in Bangalore
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4 pt-4">
                   <div className="flex items-center space-x-3">
-                    <Badge variant="outline" className="bg-indigo-100">
-                      Night
+                    <Badge variant="outline" className="bg-green-100">
+                      5:00 AM
                     </Badge>
-                    <p className="text-gray-700">Flight back to Bangalore</p>
+                    <p className="text-gray-700">Arrival in Bangalore with spiritually fulfilled heart</p>
                   </div>
                 </div>
               </CardContent>
@@ -231,40 +227,38 @@ export default function Shirdi() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="relative group overflow-hidden rounded-lg">
               <img
-                src={SaiBabaTemple || "/placeholder.svg"}
-                alt="Travihara Sai Baba Temple Shirdi"
+                src={RaghavendraSwamy}
+                alt="Sri Raghavendra Swamy Temple"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold text-lg">Sai Baba Temple</h4>
-                <p className="text-sm">Shirdi</p>
+                <h4 className="font-semibold text-lg">Sri Raghavendra Swamy</h4>
+                <p className="text-sm">Mantralayam</p>
               </div>
             </div>
-
             <div className="relative group overflow-hidden rounded-lg">
               <img
-                src={Trayambakeshwar || "/placeholder.svg"}
-                alt="Travihara Trayambakeshwar Jyotirlinga"
+                src={PanchaMuki}
+                alt="Panchamukhi Anjaneya Temple"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold text-lg">Trayambakeshwar</h4>
-                <p className="text-sm">Jyotirlinga</p>
+                <h4 className="font-semibold text-lg">Panchamukhi Anjaneya Temple</h4>
+                <p className="text-sm">Mantralayam</p>
               </div>
             </div>
-
             <div className="relative group overflow-hidden rounded-lg">
               <img
-                src={Siddhivinayak || "/placeholder.svg"}
-                alt="Travihara Siddhivinayak Temple"
+                src={Bichali}
+                alt="Bichali Appanacharya"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold text-lg">Siddhivinayak Temple</h4>
-                <p className="text-sm">Mumbai</p>
+                <h4 className="font-semibold text-lg">Bichali Appanacharya</h4>
+                <p className="text-sm">Bichali</p>
               </div>
             </div>
           </div>
@@ -273,38 +267,38 @@ export default function Shirdi() {
         {/* Pricing Section */}
         <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl p-8 md:p-12 text-white mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">💰 Package Pricing</h3>
+            <h3 className="text-3xl font-bold mb-4">Package Pricing</h3>
             <p className="text-xl opacity-90">All-inclusive spiritual journey</p>
           </div>
           <div className="max-w-md mx-auto">
             <Card className="bg-white/10 backdrop-blur border-white/20">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl text-white">Complete Package</CardTitle>
-                <CardDescription className="text-black">Starting From</CardDescription>
+                <CardDescription className="text-blue-100">Only</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-4xl font-bold text-white mb-4">₹16,999/-</div>
+                <div className="text-4xl font-bold text-white mb-4">₹2,999/-</div>
                 <p className="text-blue-100 mb-6">Per Person (All Inclusive)</p>
                 <div className="space-y-2 text-left">
                   <div className="flex items-center text-white">
                     <Check className="w-4 h-4 text-green-300 mr-3" />
-                    Return airfare included
+                    AC/Non AC Sleeper Bus (Round Trip)
                   </div>
                   <div className="flex items-center text-white">
                     <Check className="w-4 h-4 text-green-300 mr-3" />
-                    4-star hotel accommodation
+                    Morning Lodge Access & Breakfast
                   </div>
                   <div className="flex items-center text-white">
                     <Check className="w-4 h-4 text-green-300 mr-3" />
-                    All vegetarian meals
+                    Guide Assistance
                   </div>
                   <div className="flex items-center text-white">
                     <Check className="w-4 h-4 text-green-300 mr-3" />
-                    VIP darshan tickets
+                    Temple Visits as per itinerary
                   </div>
                   <div className="flex items-center text-white">
                     <Check className="w-4 h-4 text-green-300 mr-3" />
-                    A/C vehicle transfers
+                    Breakfast and Lunch
                   </div>
                 </div>
               </CardContent>
@@ -317,34 +311,34 @@ export default function Shirdi() {
           <Card className="border-green-200">
             <CardHeader className="bg-green-50">
               <CardTitle className="text-green-800 flex items-center">
-                <Check className="w-6 h-6 mr-2" />🧳 What's Included
+                ✅ Inclusions
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <div className="space-y-3">
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  Return airfare (Bangalore – Mumbai/Pune)
+                  AC / Non AC Sleeper Bus (Round Trip)
                 </div>
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  Comfortable A/C vehicle transfers
+                  Morning Lodge Access (Fresh-up + Breakfast)
                 </div>
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  All vegetarian meals
+                  Guide Assistance
                 </div>
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  4-star hotel accommodation
+                  Temple Visits as per itinerary
                 </div>
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  VIP darshan tickets
+                  Breakfast and Lunch
                 </div>
                 <div className="flex items-center text-green-700">
                   <Check className="w-4 h-4 mr-3" />
-                  1L mineral water per person per day
+                  Luggage room
                 </div>
               </div>
             </CardContent>
@@ -353,30 +347,26 @@ export default function Shirdi() {
           <Card className="border-red-200">
             <CardHeader className="bg-red-50">
               <CardTitle className="text-red-800 flex items-center">
-                <X className="w-6 h-6 mr-2" />🚫 What's Not Included
+                🚫 Exclusions
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <div className="space-y-3">
                 <div className="flex items-center text-red-700">
                   <X className="w-4 h-4 mr-3" />
-                  Entry fees to other attractions
+                  Dinner (Can be arranged at extra cost)
                 </div>
                 <div className="flex items-center text-red-700">
                   <X className="w-4 h-4 mr-3" />
-                  Personal expenses (Shopping, tips)
+                  Special Entry Tickets at Temples
                 </div>
                 <div className="flex items-center text-red-700">
                   <X className="w-4 h-4 mr-3" />
-                  Travel insurance
+                  Accommodation Beyond Fresh-Up
                 </div>
                 <div className="flex items-center text-red-700">
                   <X className="w-4 h-4 mr-3" />
-                  Medical or emergency expenses
-                </div>
-                <div className="flex items-center text-red-700">
-                  <X className="w-4 h-4 mr-3" />
-                  Beverages outside meal plan
+                  Personal expenses or tips
                 </div>
               </div>
             </CardContent>
@@ -385,37 +375,53 @@ export default function Shirdi() {
 
         {/* FAQ Section */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">🔍 Frequently Asked Questions</h3>
+          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">❓ Frequently Asked Questions</h3>
           <div className="space-y-6">
             <Card className="border-blue-200">
               <CardHeader>
-                <CardTitle className="text-lg">Is the flight included in the package price?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Yes, both onward and return flights are included in the cost.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-blue-200">
-              <CardHeader>
-                <CardTitle className="text-lg">Will I get VIP darshan at Sai Baba Temple?</CardTitle>
+                <CardTitle className="text-lg">Is accommodation included?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Your package comes with VIP darshan at Sai Baba Temple and other key temples like Trayambakeshwar and
-                  Siddhivinayak.
+                  Only for morning fresh-up and breakfast. Full-day stay can be arranged on request.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-blue-200">
               <CardHeader>
-                <CardTitle className="text-lg">Can I customize the package?</CardTitle>
+                <CardTitle className="text-lg">What kind of vehicle is used?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">AC / Non AC Sleeper Bus (no private car option in this package).</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-200">
+              <CardHeader>
+                <CardTitle className="text-lg">Can I customize the itinerary?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">This package is fixed for spiritual efficiency and convenience.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-200">
+              <CardHeader>
+                <CardTitle className="text-lg">Is Panchamukhi Anjaneya Temple visit guaranteed?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Yes, if road and time conditions allow; we prioritize it for all tours.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-200">
+              <CardHeader>
+                <CardTitle className="text-lg">When should I book this tour?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Yes, we're flexible. If you want to add places or need a longer stay, our team can customize the
-                  itinerary.
+                  Book at least 3 days in advance, especially during weekends or festival days.
                 </p>
               </CardContent>
             </Card>
@@ -424,10 +430,10 @@ export default function Shirdi() {
 
         {/* Call to Action */}
         <div className="text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
-          <h3 className="text-3xl font-bold mb-4">🙏 Book Your Spiritual Journey Now!</h3>
+          <h3 className="text-3xl font-bold mb-4">Book Your Mantralayam Spiritual Journey Now!</h3>
           <p className="text-xl mb-8 opacity-90">
-            Thousands of pilgrims have trusted us to make their Shirdi pilgrimage smooth, serene, and spiritually
-            uplifting.
+            Thousands of devotees trust TRAVIHARA for divine, smooth, and well-managed temple tours from Bangalore. Join
+            us and make your next journey truly sacred.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
             <Button size="lg" className="bg-black text-white hover:bg-white hover:text-blue-600 px-8 py-3">
@@ -443,9 +449,8 @@ export default function Shirdi() {
               travihara01@gmail.com
             </Button>
           </div>
-          <p className="text-blue-100 mb-4">🕉️ Call/WhatsApp: +91 91088 34112</p>
-          <p className="text-blue-100 mb-4">🌐 Website: www.travihara.com</p>
-          <p className="text-blue-200 italic">"Where devotion meets comfort – TRAVIHARA makes it possible."</p>
+          <p className="text-blue-100 mb-4">Call/WhatsApp: +91 91088 34112</p>
+          <p className="text-blue-200 italic">"Travel with Devotion – TRAVIHARA makes it divine."</p>
         </div>
       </div>
     </div>
