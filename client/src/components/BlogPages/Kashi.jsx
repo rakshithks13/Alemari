@@ -4,14 +4,20 @@ import { MapPin, Star, Users, Train, Phone, Mail, Check, X, Calendar } from "luc
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../Ui/Card"
 import { Badge } from "../Ui/Badge"
 import { Button } from "../Ui/Button"
+import Banner from "../../assets/Blogs/Kashi/banner.jpeg"
+import KasiTemple from "../../assets/Blogs/Kashi/kashi2.jpeg"
+import PrayagrajSangam from "../../assets/Blogs/Kashi/Triveni.jpeg"
+import AyodhyaRam from "../../assets/Blogs/Kashi/ram.jpeg"
+import GayaTemple from "../../assets/Blogs/Kashi/gaya.jpeg"
+import BodhgayaStupa from "../../assets/Blogs/Kashi/mahabodhi.jpeg"
 
 // Using placeholder images - replace with your actual pilgrimage images
-const Banner = "/placeholder.svg?height=600&width=1200"
-const KasiTemple = "/placeholder.svg?height=400&width=600"
-const PrayagrajSangam = "/placeholder.svg?height=300&width=400"
-const AyodhyaRam = "/placeholder.svg?height=300&width=400"
-const GayaTemple = "/placeholder.svg?height=300&width=400"
-const BodhgayaStupa = "/placeholder.svg?height=300&width=400"
+// const Banner = "/placeholder.svg?height=600&width=1200"
+// const KasiTemple = "/placeholder.svg?height=400&width=600"
+// const PrayagrajSangam = "/placeholder.svg?height=300&width=400"
+// const AyodhyaRam = "/placeholder.svg?height=300&width=400"
+// const GayaTemple = "/placeholder.svg?height=300&width=400"
+// const BodhgayaStupa = "/placeholder.svg?height=300&width=400"
 
 export default function Kashi() {
   return (

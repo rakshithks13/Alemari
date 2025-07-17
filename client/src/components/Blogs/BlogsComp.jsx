@@ -5,6 +5,7 @@ import Img2 from "../../assets/Blogs/Shirdi/shirdiMain.jpeg";
 import Img3 from "../../assets/Blogs/Mysore/palace.jpg";
 import Img4 from "../../assets/Blogs/Bengaluru/vidanaSoudha.webp";
 import Img5 from "../../assets/Blogs/Mantralayam/mantralayamm.jpeg";
+import kashi from "../../assets/Blogs/Kashi/kashi1.jpeg"
 
 
 
@@ -58,7 +59,7 @@ const BlogsData = [
   },
   {
     id: 6,
-    image: Img4,
+    image: kashi,
     alt: "Travihara Kasi – Prayagraj – Ayodhya – Gaya – Bodhgaya Pilgrimage Tour from Bangalore",
     title: "Kasi – Prayagraj – Ayodhya – Gaya – Bodhgaya Pilgrimage Tour from Bangalore",
     author: "Anonymous",
