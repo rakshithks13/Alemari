@@ -1,5 +1,3 @@
-import React from "react";
-
 const Subscribe = () => {
   return (
     <>
@@ -32,7 +30,7 @@ const Subscribe = () => {
           <div className="relative z-10 w-full max-w-3xl bg-gray-100 rounded-3xl shadow-xl px-6 md:px-20 py-12 flex flex-col items-center text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-3">
               Subscribe to get information, latest news and other interesting
-              offers about Jadoo
+              offers about Travihara
             </h2>
 
             <form
