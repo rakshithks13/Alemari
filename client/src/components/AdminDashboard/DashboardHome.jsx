@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../Ui/Card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "../Ui/charts"
 import { Progress } from "../Ui/progress"
-import { Badge } from "../Ui/badge"
+import { Badge } from "../Ui/Badge"
 import { Skeleton } from "../Ui/skeleton"
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from "recharts"
 import { useEffect, useState } from "react"
