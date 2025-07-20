@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "../Ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "../Ui/Card"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "../Ui/charts"
 import { Progress } from "../Ui/progress"
 import { Badge } from "../Ui/badge"
