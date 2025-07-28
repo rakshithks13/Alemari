@@ -14,10 +14,10 @@ export const NavbarLinks = [
     name: "Itinerary",
     link: "/itinerary",
   },
-  {
-    name: "Blogs",
-    link: "/blogs",
-  },
+  // {
+  //   name: "Blogs",
+  //   link: "/blogs",
+  // },
   // {
   //   name: "Best Places",
   //   link: "/best-places",
