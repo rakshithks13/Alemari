@@ -4,7 +4,7 @@ import BlogsComp from "../components/Blogs/BlogsComp";
 import Banner from "../components/Banner/Banner";
 import OrderPopup from "../components/OrderPopup/OrderPopup";
 import Destinations from "../components/Destininations/Destininations";
-// import Testimonial2 from "../components/Testimonial/Testimonial2";
+import Testimonial2 from "../components/Testimonial/Testimonial2";
 import BookingSteps from "../components/BookingSteps/BookingSteps";
 import TrendingDestinations from "../components/TrendingDestinnations/TrendingDestinations";
 // import TrendingDestinationsOld from "../components/TrendingDestinnations/TrendingDestinationsOld";
@@ -36,7 +36,7 @@ const Home = () => {
         </div>
         <BlogsComp />
         <Banner />
-          {/* <Testimonial2 /> */}
+          <Testimonial2 />
         <Subscribe />
 
         <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />

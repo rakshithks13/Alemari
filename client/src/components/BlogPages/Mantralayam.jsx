@@ -277,7 +277,7 @@ export default function Mantralayam() {
                 <CardDescription className="text-blue-100">Only</CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-4xl font-bold text-white mb-4">₹2,999/-</div>
+                <div className="text-4xl font-bold text-white mb-4">₹3,499/-</div>
                 <p className="text-blue-100 mb-6">Per Person (All Inclusive)</p>
                 <div className="space-y-2 text-left">
                   <div className="flex items-center text-white">
